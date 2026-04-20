@@ -45,13 +45,9 @@ K
 
 ### Question
 
- **a)** Explain why Johnson's Algorithm is more efficient than Floyd-Warshall for sparse graphs.
- **b)** Describe the purpose of edge reweighting and how Bellman-Ford is used in this context.
-
 ### Answer
 
-#### Part (a): Efficiency vs Floyd-Warshall for Sparse Graphs
-
+#### Part (a):Explain why Johnson’s Algorithm is more efficient than Floyd-Warshall for sparse graphs.
 Floyd-Warshall always runs in O(V³) regardless of how many edges exist. Johnson's Algorithm runs Dijkstra once per vertex giving O(V × E × log V), which is significantly faster when E << V².
 
 | Algorithm            | Time Complexity    | Best For                |
@@ -63,7 +59,7 @@ Floyd-Warshall always runs in O(V³) regardless of how many edges exist. Johnson
 - Floyd-Warshall: 1,000,000,000 operations
 - Johnson's: 1000 × 2000 × 10 = 20,000,000 operations ← 50× fewer
 
-#### Part (b): Edge Reweighting and Role of Bellman-Ford
+#### Part (b): Describe the purpose of edge reweighting and how Bellman-Ford is used in this context.
 
 Dijkstra cannot handle negative weights. Johnson's solves this by reweighting all edges to non-negative before running Dijkstra.
 
@@ -82,15 +78,13 @@ Dijkstra cannot handle negative weights. Johnson's solves this by reweighting al
 
 ### Question
 
- **a)** Model the currency exchange problem as a weighted directed graph.
-
- **b)** Explain how logarithmic transformation of exchange rates converts the problem into a shortest path or cycle detection problem.
-
- **c)** Identify the algorithm used to detect arbitrage opportunities and justify its use.
+a) Model the currency exchange problem as a weighted directed graph.
+b) Explain how logarithmic transformation of exchange rates converts the problem into a shortest path or cycle detection problem.
+c) Identify the algorithm used to detect arbitrage opportunities and justify its use.
 
 ### Answer
 
-#### Part (a): Graph Model
+#### Part (a): a) Model the currency exchange problem as a weighted directed graph.
 
 | Graph Element     | Meaning                    | Example                 |
 |-------------------|----------------------------|-------------------------|
@@ -101,7 +95,7 @@ Dijkstra cannot handle negative weights. Johnson's solves this by reweighting al
 Arbitrage exists when a cycle's rate product > 1.
 **Example:** USD → EUR → GBP → USD: `0.92 × 1.30 × 1.40 = 1.6744 > 1` → profit.
 
-#### Part (b): Logarithmic Transformation
+#### Part (b): b) Explain how logarithmic transformation of exchange rates converts the problem into a shortest path or cycle detection problem.
 
 Arbitrage condition: `r₁ × r₂ × ... × rₖ > 1`
 
